@@ -1,5 +1,5 @@
-from shapely.geometry import Polygon, LineString
-import matplotlib.pyplot as plt
+from shapely.geometry import Polygon
+
 
 def create_dummy_island():
     """

@@ -1,6 +1,5 @@
 import rasterio
 import matplotlib.pyplot as plt
-import numpy as np
 
 # Path to the specific Deering image
 image_path = "F:/alaska gsoc/CoastlineExtraction/sample_data/PlanetLabs/20160909_213103_0e19_3B_AnalyticMS_SR_clip.tif"
@@ -23,7 +22,7 @@ def process_real_ndwi():
         # Usually, values > 0.0 or 0.1 are water.
         water_mask = ndwi > 0.1 
         
-        # --- Visualization ---
+        # Visualization 
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 8))
         
         # Plot 1: The NDWI Index (The math)
