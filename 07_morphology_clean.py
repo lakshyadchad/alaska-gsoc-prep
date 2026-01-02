@@ -32,12 +32,12 @@ def keep_only_largest():
         regions = regionprops(labeled_mask)
         
         if not regions:
-            print("❌ No water found!")
+            print("No water found!")
             return
 
         # Find the one with the maximum area
         largest_region = max(regions, key=lambda r: r.area)
-        print(f"🌊 Largest Region Area: {largest_region.area} pixels")
+        print(f"Largest Region Area: {largest_region.area} pixels")
         
         # Create a new blank mask and paint ONLY the largest region
         mask_clean = np.zeros_like(mask_noisy)
@@ -45,7 +45,7 @@ def keep_only_largest():
         
         # Calculate how much junk we removed
         noise_area_removed = np.sum(mask_noisy) - np.sum(mask_clean)
-        print(f"🗑️ Deleted {noise_area_removed} pixels of noise.")
+        print(f"Deleted {noise_area_removed} pixels of noise.")
 
         # --- Visualization ---
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 8))
